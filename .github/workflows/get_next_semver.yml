@@ -1,0 +1,17 @@
+name: Get Next GitHub Release Semver
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: bengreenier-actions/gh-release-next-semver@master
+      id: next_semver
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        strip_tag_prefix: v
+    - name: Leverage output
+      run: echo v${{ steps.next_semver.outputs.next }}
