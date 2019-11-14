@@ -29,4 +29,4 @@ jobs:
         strip_tag_prefix: v
         override_repo: electron/electron
     - name: Next Electron Version
-      run: echo Version ${{ steps.next_semver.outputs.next }}
+      run: echo v${{ steps.next_semver.outputs.next }}
