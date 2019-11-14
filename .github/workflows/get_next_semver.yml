@@ -1,6 +1,9 @@
 name: Get Next GitHub Release Semver
 
-on: [push]
+on:
+  push:
+    paths:
+    - '.github/workflows/get_next_semver.yml'
 
 jobs:
   next_self:
