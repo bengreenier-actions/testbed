@@ -1,0 +1,16 @@
+name: File As Output
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo hello this is in a file > file.txt
+    - name: Read File
+      id: read_file
+      run: cat file.txt
+    - name: Leverage output
+      run: echo ${{ steps.read_file.outputs }}
