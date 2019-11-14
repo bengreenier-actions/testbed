@@ -1,0 +1,14 @@
+name: Generate Username
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: bengreenier-actions/generate-name@master
+      id: generate_name
+    - name: Leverage the name
+      run: echo ${{ steps.generate_name.outputs.name }}
