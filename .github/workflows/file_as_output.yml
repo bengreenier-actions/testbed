@@ -3,10 +3,8 @@ name: File As Output
 on: [push]
 
 jobs:
-  build:
-
+  vanilla_offerings:
     runs-on: ubuntu-latest
-
     steps:
     - run: echo hello this is in a file > file.txt
     - name: Read File
@@ -14,3 +12,15 @@ jobs:
       run: cat file.txt
     - name: Leverage output
       run: echo ${{ steps.read_file.outputs }}
+  custom_offerings:
+    runs-on: [ubuntu-latest]
+    steps:
+      - run: echo hello this is in a file > file.txt
+      - name: Read File
+        id: read_file
+        uses: bengreenier/shell-with-output@master
+        with:
+          command: cat file.txt
+      - name: Leverage output
+        run: echo ${{ steps.read_file.outputs.stdout }}
+  
