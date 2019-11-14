@@ -18,7 +18,7 @@ jobs:
       - run: echo hello this is in a file > file.txt
       - name: Read File
         id: read_file
-        uses: bengreenier/shell-with-output@master
+        uses: bengreenier-actions/shell-with-output@master
         with:
           command: cat file.txt
       - name: Leverage output
