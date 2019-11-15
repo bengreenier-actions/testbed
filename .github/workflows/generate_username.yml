@@ -1,6 +1,9 @@
 name: Generate Username
 
-on: [push]
+on:
+  push:
+    paths:
+    - '.github/workflows/generate_username.yml'
 
 jobs:
   build:
