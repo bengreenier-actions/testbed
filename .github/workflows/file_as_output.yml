@@ -1,6 +1,9 @@
 name: File As Output
 
-on: [push]
+on:
+  push:
+    paths:
+    - '.github/workflows/file_as_output.yml'
 
 jobs:
   vanilla_offerings:
