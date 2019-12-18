@@ -1,0 +1,16 @@
+name: File As Output
+
+on:
+  push:
+    paths:
+    - '.github/workflows/node_git_test.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install nodegit
